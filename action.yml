@@ -1,0 +1,32 @@
+name: 42Seoul C/CPP Makefile Test
+
+description: This GitHub Actions workflow checks for Makefiles in the repository and runs the make command in each directory containing a Makefile. If any make command fails, the workflow will terminate with a failure message.
+
+on: push
+
+inputs:
+  dir:
+    default: .
+
+jobs:
+  test-makefiles:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Find and run Makefiles
+      run: |
+        set -e
+        for makefile in $(find ${{ inputs.dir }} -type f -name "Makefile"); do
+          # Change to the directory containing the Makefile
+          cd "$(dirname "$makefile")"
+          # Run make command
+          make
+          # Check the exit code of make command
+          if [ $? -ne 0 ]; then
+            echo "Make failed in $(dirname "$makefile"). Exiting workflow."
+            exit 1
+          fi
+          # Return to the original directory
+          cd -
+        done
