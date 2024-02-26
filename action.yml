@@ -1,4 +1,4 @@
-name: 42Seoul C/CPP Makefile Test
+name: 42Cursus C/CPP Makefile Test
 
 description: This workflow finds Makefiles in the repository and runs 'make' in each directory
 
