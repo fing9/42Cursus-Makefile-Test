@@ -6,7 +6,7 @@
 name: Your Workflow
 on: push
 jobs:
-  maketest:
+  test-makefiles:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
