@@ -1,6 +1,6 @@
 name: 42Seoul C/CPP Makefile Test
 
-description: This GitHub Actions workflow checks for Makefiles in the repository and runs the make command in each directory containing a Makefile. If any make command fails, the workflow will terminate with a failure message.
+description: This workflow finds Makefiles in the repository and runs 'make' in each directory with one. It stops if any 'make' command fails.
 
 on: push
 
