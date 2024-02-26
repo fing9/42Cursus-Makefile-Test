@@ -11,4 +11,6 @@ jobs:
     steps:
       - id: Make Test
         uses: fing9/42cursus-makefile-test@v1
+        with:
+          dir: . # 하위 계층의 모든 Makefile에 대해서 Make를 실행할 루트 계층, 따로 지정하지 않을 시 .(루트 디렉토리)로 지정됨
 ```
