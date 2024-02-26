@@ -2,6 +2,10 @@ name: 42Seoul C/CPP Makefile Test
 
 description: This workflow finds Makefiles in the repository and runs 'make' in each directory
 
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
 on: push
 
 inputs:
