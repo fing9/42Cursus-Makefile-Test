@@ -15,9 +15,9 @@ inputs:
 
 runs:
   using: 'composite'
-  shell: bash
   steps:
     - uses: actions/checkout@v3
+      shell: bash
     - run: |
         set -e
         for makefile in $(find ${{ inputs.dir }} -type f -name "Makefile"); do
@@ -29,3 +29,4 @@ runs:
           fi
           cd -
         done
+      shell: bash
