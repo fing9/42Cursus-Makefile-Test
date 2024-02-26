@@ -1,6 +1,6 @@
 name: 42Seoul C/CPP Makefile Test
 
-description: This workflow finds Makefiles in the repository and runs 'make' in each directory with one. It stops if any 'make' command fails.
+description: This workflow finds Makefiles in the repository and runs 'make' in each directory
 
 on: push
 
