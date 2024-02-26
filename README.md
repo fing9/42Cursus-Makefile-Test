@@ -6,7 +6,7 @@
 name: Your Workflow
 on: push
 jobs:
-  calculate:
+  maketest:
     runs-on: ubuntu-latest
     steps:
       - id: Make Test
