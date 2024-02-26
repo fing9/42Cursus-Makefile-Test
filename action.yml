@@ -17,7 +17,6 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v3
-      shell: bash
     - run: |
         set -e
         for makefile in $(find ${{ inputs.dir }} -type f -name "Makefile"); do
