@@ -9,8 +9,6 @@ jobs:
   test-makefiles:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
       - name: Make Test
         uses: fing9/42Cursus-Makefile-Test@v1
         with:
