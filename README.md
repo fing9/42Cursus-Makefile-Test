@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Make Test
-        uses: fing9/42Cursus-Makefile-Test@v1
+        uses: fing9/42Cursus-Makefile-Test@v3.0.2
         with:
           dir: . # 하위 계층의 모든 Makefile에 대해서 Make를 실행할 루트 계층, 따로 지정하지 않을 시 .(루트 디렉토리)로 지정됨
 ```
