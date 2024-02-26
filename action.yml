@@ -10,29 +10,21 @@ on: push
 
 inputs:
   dir:
+    description: 'The directory to search for Makefiles'
     default: .
 
-jobs:
-  test-makefiles:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Find and run Makefiles
-      run: |
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v3
+    - run: |
         set -e
         for makefile in $(find ${{ inputs.dir }} -type f -name "Makefile"); do
-          # Change to the directory containing the Makefile
           cd "$(dirname "$makefile")"
-          # Run make command
           make
-          # Check the exit code of make command
           if [ $? -ne 0 ]; then
             echo "Make failed in $(dirname "$makefile"). Exiting workflow."
             exit 1
           fi
-          # Return to the original directory
           cd -
         done
-      shell: bash
